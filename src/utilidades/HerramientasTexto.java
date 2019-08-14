@@ -39,7 +39,6 @@ public class HerramientasTexto {
         // Leemos la primera linea
         while (br.ready()) {
         	s1 = br.readLine();
-
        StringTokenizer st = new StringTokenizer (s1);
         // bucle por todas las palabras
         	while (st.hasMoreTokens())
@@ -64,6 +63,7 @@ public class HerramientasTexto {
 		hs.addAll(arrText2);
 		arrText2.clear();
 		arrText2.addAll(hs);
+		arrText2.sort(null);
 		
 		return arrText2;
 		

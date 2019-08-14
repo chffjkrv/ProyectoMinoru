@@ -35,9 +35,9 @@ public class Mainclaina {
 		ArrayList<String> arrTxt = HerramientasTexto.fileToArray("SunenCríticasLiterarias.txt");
 		ArrayList<String> arrTxt2 = new ArrayList<String>();
 
-		for (int x =0; x<arrTxt.size(); x++){
+		/**for (int x =0; x<arrTxt.size(); x++){
     	    System.out.println(arrTxt.get(x));
-    	} 
+    	} */
 		arrTxt2 = HerramientasTexto.quitarRepeticiones(arrTxt);
 		
 		for (int x =0; x<arrTxt2.size(); x++){
@@ -56,9 +56,6 @@ public class Mainclaina {
     	} 
 		
 		Listpal.mostrarPalabras(listaPalabras);
-		
-		
-		 
 		
 		
 	}
