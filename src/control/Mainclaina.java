@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+
 import utilidades.Searcher;
+import utilidades.Hashmap;
 import utilidades.HerramientasTexto;
 
 
@@ -28,40 +30,13 @@ public class Mainclaina {
         searchEngine.printMatches(matches);
 	}
 	*/
-		ArrayList<String> arrayText = new ArrayList<String>();
-        String s1;
-        String s2;
- 
-        // Cargamos el buffer con el contenido del archivo
-        BufferedReader br = new BufferedReader (new FileReader ("ElQvixote.txt"));
- 
-        // Leemos la primera linea
-        while (br.ready()) {
-        	s1 = br.readLine();
-        	System.out.println ("texto de cada linea: " + s1);
-        	
- 
-        System.out.println ("La primera linea del archivo es: " + s1);
-        System.out.println ("La linea tiene " + s1.length() + " caracteres");
- 
-        System.out.println ();
-        System.out.println ("Separando la linea en trozos tenemos las siguientes palabras:");
- 
-        int numTokens = 0;
-        StringTokenizer st = new StringTokenizer (s1);
- 
-        // bucle por todas las palabras
-        while (st.hasMoreTokens())
-        {
-            s2 = st.nextToken();
-            System.out.println ("    Palabra " + numTokens + " es: " + s2);
-            arrayText.add(s2);
-            numTokens++;
-        }
-        System.out.println(" \n\n");
-        }
-        for (int i =0; i<arrayText.size(); i++){
-            System.out.println(arrayText.get(i));
-       }
+	
+		ArrayList<String> arrTxt = HerramientasTexto.fileToArray("SunenCríticasLiterarias.txt");
+		System.out.println(arrTxt.size());
+		for (int x =0; x<arrTxt.size(); x++){
+    	    System.out.println(arrTxt.get(x));
+    	} 
+
+
 	}
 }

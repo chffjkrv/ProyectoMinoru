@@ -1,55 +1,60 @@
 package utilidades;
 
-import java.io.File;
 import java.io.*;
+import java.text.Normalizer;
 import java.util.*;
-import java.io.IOException;
+import java.lang.String;
 
 public class HerramientasTexto {
 	
 	public HerramientasTexto() {
 		
 	}
-	
-	public static void fileToArray() throws IOException  {
 
-		        String s1;
-		        String s2;
-		 
-		        // Cargamos el buffer con el contenido del archivo
-		        try {
-		        BufferedReader br = new BufferedReader (new FileReader ("/HailYoMismo/src/textos/pruebota1.txt"));
-		        // Leemos la primera linea
-		        s1 = br.readLine();
-		 
-		        System.out.println ("La primera linea del archivo es: " + s1);
-		        System.out.println ("La linea tiene " + s1.length() + " caracteres");
-		 
-		        System.out.println ();
-		        System.out.println ("Separando la linea en trozos tenemos las siguientes palabras:");
-		 
-		        int numTokens = 0;
-		        StringTokenizer st = new StringTokenizer (s1);
-		 
-		        // bucle por todas las palabras
-		        while (st.hasMoreTokens())
-		        {
-		            s2 = st.nextToken();
-		            numTokens++;
-		            System.out.println ("    Palabra " + numTokens + " es: " + s2);
-		        
-		        }
-		        try{                    
-		            if( null != br ){   
-		               br.close();     
-		            }                  
-		         }catch (Exception e2){ 
-		            e2.printStackTrace();
-		         } 
-		        } catch(IOException e) {
-			        	e.getMessage();
-			        	System.out.println("NIEEET");
-			        } 		
+	public static String normalizaString(String plbr) {
+		
+	    String limpio =null;
+	    if (plbr !=null) {
+	    	limpio = plbr;
+	        // Normalizar texto para eliminar acentos, dieresis, cedillas y tildes
+	        limpio = Normalizer.normalize(limpio, Normalizer.Form.NFD);
+	        // Quitar caracteres no ASCII.
+	        limpio = limpio.replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
+	        // Poner en minusculas.
+	        limpio = limpio.toLowerCase();
+	  //      limpio = limpio.replaceAll("[^\\p{ASCII}]", "");
+	        // Quitar cualquier tipo de puntuación aderida a la palabra
+	        limpio = limpio.replaceAll("\\p{Punct}","");	        
+	    }
+	    return limpio;
 	}
+	
+	public static ArrayList<String> fileToArray(String pathText) throws IOException  {
 
+		ArrayList<String> arrayText = new ArrayList<String>();
+        String s1;
+        String s2;
+        try {
+        // Cargamos el buffer con el contenido del archivo
+        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(pathText), "utf-8"));
+        // Leemos la primera linea
+        while (br.ready()) {
+        	s1 = br.readLine();
+
+       StringTokenizer st = new StringTokenizer (s1);
+        // bucle por todas las palabras
+        	while (st.hasMoreTokens())
+        	{
+       			s2 = st.nextToken();
+       			s2 = normalizaString(s2);
+        		arrayText.add(s2);
+        	}    	
+        }
+        }catch(IOException e) {
+        	e.getMessage();
+        }
+        
+		return arrayText;	
+	}
+	
 }
