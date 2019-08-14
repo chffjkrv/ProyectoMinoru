@@ -12,7 +12,12 @@ public class Hashmap {
 	   
    }
    
-   public static void guardarPalabra(Integer codigo, String palabra, HashMap <Integer,String> listaPalabras){
+   public  HashMap<Integer,String> creaHashmap() {
+	   HashMap<Integer,String> listaPalabras = new HashMap<Integer,String>();
+	   return listaPalabras;
+   }
+   
+   public void guardarPalabra(Integer codigo, String palabra, HashMap <Integer,String> listaPalabras){
 	    if (listaPalabras.containsKey(codigo)) {
 	        System.out.println("No se puede introducir el Palabra. El código esta repetido.");
 	    } else {
@@ -20,7 +25,7 @@ public class Hashmap {
 	    }
 	}
    
-   public static void modificaPalabra(Integer codigo, HashMap<Integer,String> listaPalabras){
+   public  void modificaPalabra(Integer codigo, HashMap<Integer,String> listaPalabras){
 	    Scanner sc = new Scanner(System.in);
 	    if (listaPalabras.containsKey(codigo)) {
 	        System.out.println("Introduce la palabra que quieras que tenga este codigo:");
@@ -30,7 +35,7 @@ public class Hashmap {
 	    }
 	}
    
-   public static void mostrarPalabras(HashMap<Integer, String> listaPalabras) {
+   public  void mostrarPalabras(HashMap<Integer, String> listaPalabras) {
 	    Integer clave;
 	    Iterator<Integer> Palabras = listaPalabras.keySet().iterator();
 	    System.out.println("Hay los siguientes Palabras:");
@@ -40,7 +45,7 @@ public class Hashmap {
 	    }        
 	} 
    
-   public static void mostrarPalabras2(HashMap<Integer, String> listaPalabras) {
+   public  void mostrarPalabras2(HashMap<Integer, String> listaPalabras) {
 	    Iterator iterador = listaPalabras.entrySet().iterator();
 	
 	    Map.Entry Palabra;
@@ -50,7 +55,7 @@ public class Hashmap {
 	    } 
 	}
    
-   public static void eliminaPalabra(Integer codigo, HashMap<Integer,String> listaPalabras) {
+   public  void eliminaPalabra(Integer codigo, HashMap<Integer,String> listaPalabras) {
 	    if (listaPalabras.containsKey(codigo)) {
 	        listaPalabras.remove(codigo);
 	    } else {

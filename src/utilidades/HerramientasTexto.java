@@ -19,10 +19,9 @@ public class HerramientasTexto {
 	        // Normalizar texto para eliminar acentos, dieresis, cedillas y tildes
 	        limpio = Normalizer.normalize(limpio, Normalizer.Form.NFD);
 	        // Quitar caracteres no ASCII.
-	        limpio = limpio.replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
 	        // Poner en minusculas.
 	        limpio = limpio.toLowerCase();
-	  //      limpio = limpio.replaceAll("[^\\p{ASCII}]", "");
+	        limpio = limpio.replaceAll("[^\\p{ASCII}]", "");
 	        // Quitar cualquier tipo de puntuación aderida a la palabra
 	        limpio = limpio.replaceAll("\\p{Punct}","");	        
 	    }
@@ -57,4 +56,39 @@ public class HerramientasTexto {
 		return arrayText;	
 	}
 	
+	public static ArrayList<String> quitarRepeticiones(ArrayList<String> arrText){
+		
+		ArrayList<String> arrText2 = (ArrayList<String>)arrText.clone();
+		
+		Set<String> hs = new HashSet<>();
+		hs.addAll(arrText2);
+		arrText2.clear();
+		arrText2.addAll(hs);
+		
+		return arrText2;
+		
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.StringTokenizer;
 
 
@@ -32,11 +33,33 @@ public class Mainclaina {
 	*/
 	
 		ArrayList<String> arrTxt = HerramientasTexto.fileToArray("SunenCríticasLiterarias.txt");
-		System.out.println(arrTxt.size());
+		ArrayList<String> arrTxt2 = new ArrayList<String>();
+
 		for (int x =0; x<arrTxt.size(); x++){
     	    System.out.println(arrTxt.get(x));
     	} 
-
-
+		arrTxt2 = HerramientasTexto.quitarRepeticiones(arrTxt);
+		
+		for (int x =0; x<arrTxt2.size(); x++){
+    	    System.out.println(arrTxt2.get(x));
+    	} 
+		System.out.println("Primer array: "+arrTxt.size()+"\n");
+		System.out.println("Segudno array sin repes: "+arrTxt2.size());
+		
+		 HashMap<Integer,String> listaPalabras;
+		
+		Hashmap Listpal = new Hashmap();
+		
+		listaPalabras = Listpal.creaHashmap();
+		for (int x =0; x<arrTxt2.size(); x++){
+			Listpal.guardarPalabra(x, arrTxt2.get(x), listaPalabras);
+    	} 
+		
+		Listpal.mostrarPalabras(listaPalabras);
+		
+		
+		 
+		
+		
 	}
 }
