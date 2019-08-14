@@ -1,0 +1,12 @@
+-Pasar el texto del fichero a un array de String: 
+	String[] textToArray(file nombredeachivo);
+	
+-Pasar el array de String a un array de Int, consultado la referencia de id en la BD:
+	Int[] palArrayTOidArray(String[] arrayText);
+	
+-Conexion con la BD:
+	void ConexionBD(String nombreBD);
+	
+-Creacion de la tabla: Script mysql.
+
+-

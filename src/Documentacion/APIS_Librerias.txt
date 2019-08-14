@@ -1,0 +1,7 @@
+-java.text
+-difusa tokenizer ?
+-java.util.regex ?
+-Apache Lucene
+-Named Entity Recogniser
+-CRFClassifier del Stanford Natural Language Processing Group, es una implementación de Java de un reconocedor de entidades con nombre.
+-GATE (General Architecture for Text Engineering), un conjunto de código abierto para el procesamiento del lenguaje.
