@@ -7,10 +7,15 @@ import java.lang.String;
 
 public class HerramientasTexto {
 	
+	private static BufferedReader br;
 	public HerramientasTexto() {
 		
 	}
-
+/**
+ * 
+ * @param plbr
+ * @return Devuelve la palabra noromalizada en ASCII.
+ */
 	public static String normalizaString(String plbr) {
 		
 	    String limpio =null;
@@ -18,24 +23,28 @@ public class HerramientasTexto {
 	    	limpio = plbr;
 	        // Normalizar texto para eliminar acentos, dieresis, cedillas y tildes
 	        limpio = Normalizer.normalize(limpio, Normalizer.Form.NFD);
-	        // Quitar caracteres no ASCII.
 	        // Poner en minusculas.
 	        limpio = limpio.toLowerCase();
+	        // Quitar caracteres no ASCII.
 	        limpio = limpio.replaceAll("[^\\p{ASCII}]", "");
 	        // Quitar cualquier tipo de puntuación aderida a la palabra
 	        limpio = limpio.replaceAll("\\p{Punct}","");	        
 	    }
 	    return limpio;
 	}
-	
+	/**
+	 * 
+	 * @param pathText
+	 * @return Devuelve un ArrayList con el texto del fichero del path quie pasamos como parametro.
+	 * @throws IOException
+	 */
 	public static ArrayList<String> fileToArray(String pathText) throws IOException  {
 
 		ArrayList<String> arrayText = new ArrayList<String>();
         String s1;
         String s2;
         try {
-        // Cargamos el buffer con el contenido del archivo
-        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(pathText), "utf-8"));
+        br = new BufferedReader(new InputStreamReader(new FileInputStream(pathText), "utf-8"));
         // Leemos la primera linea
         while (br.ready()) {
         	s1 = br.readLine();
@@ -54,7 +63,11 @@ public class HerramientasTexto {
         
 		return arrayText;	
 	}
-	
+	/**
+	 * 
+	 * @param arrText
+	 * @return Devuelve un String[] del texto ordenado alfanumericamente y sin repeticiones en las palabras y numeros.
+	 */
 	public static ArrayList<String> quitarRepeticiones(ArrayList<String> arrText){
 		
 		ArrayList<String> arrText2 = (ArrayList<String>)arrText.clone();

@@ -21,7 +21,7 @@ public class Mainclaina {
 
 	public static void main(String[] args) throws IOException {
 
-		ArrayList<String> arrTxt = HerramientasTexto.fileToArray("BIBLIACOMPLETA.txt");
+		ArrayList<String> arrTxt = HerramientasTexto.fileToArray("ElQvixote.txt");
 		ArrayList<String> arrTxt2 = new ArrayList<String>();
 		Integer[] arrTxtInteger = new Integer[arrTxt2.size()];
 
@@ -38,16 +38,10 @@ public class Mainclaina {
 		Listpal.llenarHashMap(listaPalabras, arrTxt2);
  		Listpal.mostrarPalabras2(listaPalabras);
  		arrTxtInteger = Listpal.arrTxtTOidArrTxt(arrTxt, listaPalabras);
- 		EscribeTXT.escribeArrIntEnTXT(arrTxtInteger,"ArrayInt");
- 		EscribeTXT.escribeHashMapEnTXT(listaPalabras, "ListaId");
-    	
-	/**	System.out.println("Primer array: "+arrTxt.size()+"\n");
+ 		EscribeTXT.escribeArrIntEnTXT(arrTxtInteger,"ArrayIntElQvixote");
+ 		EscribeTXT.escribeHashMapEnTXT(listaPalabras, "ListaIdElQvixote");   	
+ 		System.out.println("Primer array: "+arrTxt.size()+"\n");
  		System.out.println("Segundo array sin repes: "+arrTxt2.size());
-
-		for (int x =0; x<arrTxtInteger.length; x++){
-    	    System.out.println(arrTxtInteger[x]);
-		}		
-*/
-		System.out.println("YA TA PREMOH");
+ 		System.out.println("YA TA PREMOH");
 	}
 } 

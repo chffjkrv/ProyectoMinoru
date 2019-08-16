@@ -41,7 +41,7 @@ public class EscribeTXT{
             fichero = new FileWriter(nombreArchivo+".txt");
             pw = new PrintWriter(fichero);
      		for (int x =0; x<arrString.length; x++){
-     			pw.println(arrString[x]);
+     			pw.print(arrString[x]+",");
     		}
         } catch (Exception e) {
             e.printStackTrace();
