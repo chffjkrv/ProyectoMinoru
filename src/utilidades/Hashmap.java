@@ -54,7 +54,7 @@ public class Hashmap {
 	    Integer clave;
 	    Iterator<Integer> Palabras = listaPalabras.keySet().iterator();
 	    System.out.println("Hay los siguientes Palabras:");
-	    while(Palabras.hasNext()){
+	    while(Palabras.hasNext()){	
 	        clave = Palabras.next();
 	        System.out.println(clave + " - " + listaPalabras.get(clave));
 	    }
@@ -72,13 +72,14 @@ public class Hashmap {
    public Integer damelId(HashMap<Integer, String> listaPalabras, String pal) {
 	    
 	   Iterator iterador = listaPalabras.entrySet().iterator();
-	   Integer id;
-	   
+	   Integer id = null;
+	   	Boolean para = false;
 	    Map.Entry Palabra;
 	    while (iterador.hasNext()) {
 	        Palabra = (Map.Entry) iterador.next();
-	        id = Palabra.getKey();
-	        String palInterna = (String)Palabra.getValue());
+ 	        if(Palabra.getValue().equals(pal)) {
+	         id = (Integer)Palabra.getKey();
+	        }
 	    }
 	    return id;
 	}
@@ -91,11 +92,15 @@ public class Hashmap {
 	    }
 	}
 
-   public Integer[] arrTxtTOidArrTxt(ArrayList<String> arrTxt) {
+   public Integer[] arrTxtTOidArrTxt(ArrayList<String> arrTxt, HashMap<Integer, String> listaPalabras) {
 	   Integer[] intArrtxt = new Integer[arrTxt.size()];
+	   Integer intAux = null;
+	   String palAux;
 	   
 	   for(int i=0;i<arrTxt.size();i++) {
-		   
+		 palAux = arrTxt.get(i);  
+		 intAux = damelId(listaPalabras,palAux);
+		 intArrtxt[i]=intAux;
 	   }
 
 	   return intArrtxt;
