@@ -32,6 +32,7 @@ public class EscribeTXT{
            }
         }
     }
+    
     public static void escribeArrStringEnTXT(String[] arrString, String nombreArchivo) {
 
         FileWriter fichero = null;
@@ -56,6 +57,7 @@ public class EscribeTXT{
            }
         }
     }
+    
     public static void escribeHashMapEnTXT(HashMap<Integer, String> listaPalabras, String nombreArchivo) {
 
         FileWriter fichero = null;
@@ -83,4 +85,33 @@ public class EscribeTXT{
            }
         }
     }
+    public static void escribeArrIntEnTXT(Integer[][] MatrizDoble, String nombreArchivo) {
+
+        FileWriter fichero = null;
+        PrintWriter pw = null;
+        try
+        {
+            fichero = new FileWriter(nombreArchivo+".txt");
+            pw = new PrintWriter(fichero);
+     		for(int f=0;f<MatrizDoble.length;f++) {
+
+    			for(int c=0;c<MatrizDoble.length;c++) {
+    				pw.print(MatrizDoble[f][c]+" ");
+    			}
+    			pw.print("\n");
+    		}
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+           try {
+           // Nuevamente aprovechamos el finally para 
+           // asegurarnos que se cierra el fichero.
+           if (null != fichero)
+              fichero.close();
+           } catch (Exception e2) {
+              e2.printStackTrace();
+           }
+        }
+    }
 }
+
