@@ -22,10 +22,18 @@ public class Mainclaina {
 
 	public static void main(String[] args) throws IOException {
 		
+<<<<<<< HEAD
+		String texto = "quijoteCorto";
+		
+		ArrayList<String> arrTxt;
+		ArrayList<String> arrTxt2;
+		ArrayList<Integer> listaConfluencias;
+=======
 		String texto = "ElQvixote2_2";
 		
 		ArrayList<String> arrTxt;
 		ArrayList<String> arrTxt2;
+>>>>>>> fe283fc10e96e47e3ea8efb27124964b1dd5b2b5
 		HashMap<Integer,String> listaPalabras;
 		Hashmap Listpal;
 		
@@ -54,12 +62,31 @@ public class Mainclaina {
  		Matrix.rellenaMatrix(MatrizDoble, arrTxtInteger);
 		
  		//Generamos los documentos .txt
+<<<<<<< HEAD
+ 		EscribeTXT.escribeArrIntEnTXT(arrTxtInteger,texto+"TextoEnNumeros");
+ 		EscribeTXT.escribeHashMapEnTXT(listaPalabras, texto+"ListaPalabrasID");  
+ 		EscribeTXT.escribeArrIntEnTXT(MatrizDoble, texto+"Matrix");
+=======
  		EscribeTXT.escribeArrIntEnTXT(arrTxtInteger,"ArrayInt"+texto);
  		EscribeTXT.escribeHashMapEnTXT(listaPalabras, "ListaId"+texto);  
  		EscribeTXT.escribeArrIntEnTXT(MatrizDoble, "matrix"+texto);
+>>>>>>> fe283fc10e96e47e3ea8efb27124964b1dd5b2b5
  		System.out.println("El texto tiene : "+arrTxt.size()+" palabras\n");
  		System.out.println("Sin repeticiones son: "+arrTxt2.size()+" palabra");
  		System.out.println("YA TA PREMOH");
+ 		
+ 		listaConfluencias=Matrix.confluencia(MatrizDoble, arrTxtInteger);
+ 		EscribeTXT.escribeArrListIntEnTXT(listaConfluencias, texto+"ArrayTuplasTotal");
+ 		
+ 		
+ 		Integer[] listaConfluenciasBIS = new Integer[listaConfluencias.size()];
+ 		listaConfluenciasBIS=listaConfluencias.toArray(listaConfluenciasBIS);
+ 		if(listaConfluenciasBIS.equals(arrTxtInteger)==true) {
+ 			System.out.println("IDEM");
+ 		} else {
+ 			System.out.println("NIET");
+ 		}
+ 		
 	}
 	
 } 

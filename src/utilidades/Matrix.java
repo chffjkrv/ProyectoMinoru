@@ -1,8 +1,15 @@
 package utilidades;
 
+<<<<<<< HEAD
+import java.util.List;
+
 import java.util.ArrayList;
 
 public class Matrix {
+	
+	static Integer num1;
+	static Integer num2;
+	static Integer numCell;
 	
 	public Matrix() {
 		
@@ -31,9 +38,11 @@ public class Matrix {
 	
 	public static Integer[][] rellenaMatrix(Integer[][] MtrxInt, Integer[] arrTxtInteger) {
 		
+
 		Integer num1;
 		Integer num2;
 		Integer numCell;
+
 		
 		for(int x = 0;x<arrTxtInteger.length-1;x++) {
 
@@ -46,7 +55,27 @@ public class Matrix {
 		}
 		return MtrxInt;
 	}
-	
-	
 
+	
+	public static List<List<Integer>> confluencia(Integer[][] MtrxInt, Integer[] arrTxtInteger){
+
+		ArrayList<Integer> posicionesCon = new ArrayList<Integer>();
+		List<List<Integer>> listOfLists = new ArrayList<List<Integer>>(); 
+		
+		for(int x = 0;x<arrTxtInteger.length-1;x++) {
+
+			num1 = arrTxtInteger[x];
+			num2 = arrTxtInteger[x+1];
+			numCell=MtrxInt[num1][num2];
+			ArrayList<Integer>[][] list = new ArrayList[10][10];
+			list[0][0] = new ArrayList<>();
+				if(numCell>0) {
+					posicionesCon.add(numCell);
+					posicionesCon.add(num1);
+					posicionesCon.add(num2);
+				}
+		}
+		
+		return listOfLists;
+	}
 }

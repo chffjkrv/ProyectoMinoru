@@ -1,5 +1,6 @@
 package utilidades;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -32,6 +33,32 @@ public class EscribeTXT{
            }
         }
     }
+
+    public static void escribeArrListIntEnTXT(ArrayList<Integer> listaConfluencias, String nombreArchivo) {
+
+        FileWriter fichero = null;
+        PrintWriter pw = null;
+        try
+        {
+            fichero = new FileWriter(nombreArchivo+".txt");
+            pw = new PrintWriter(fichero);
+     		for (int f =0; f<listaConfluencias.size(); f++){
+     			pw.print(listaConfluencias.get(f)+", ");
+    		}
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+           try {
+           // Nuevamente aprovechamos el finally para 
+           // asegurarnos que se cierra el fichero.
+           if (null != fichero)
+              fichero.close();
+           } catch (Exception e2) {
+              e2.printStackTrace();
+           }
+        }
+    }
+
     
     public static void escribeArrStringEnTXT(String[] arrString, String nombreArchivo) {
 
