@@ -17,13 +17,14 @@ public class HerramientasTexto {
 	    if (plbr !=null) {
 	    	limpio = plbr;
 	        // Normalizar texto para eliminar acentos, dieresis, cedillas y tildes
-	        limpio = Normalizer.normalize(limpio, Normalizer.Form.NFD);
+	        limpio = Normalizer.normalize(limpio, Normalizer.Form.NFD).toLowerCase().replaceAll("[^\\p{ASCII}]", "").replaceAll("\\p{Punct}","");
 	        // Quitar caracteres no ASCII.
 	        // Poner en minusculas.
-	        limpio = limpio.toLowerCase();
+	      /**  limpio = limpio.toLowerCase();
 	        limpio = limpio.replaceAll("[^\\p{ASCII}]", "");
 	        // Quitar cualquier tipo de puntuación aderida a la palabra
-	        limpio = limpio.replaceAll("\\p{Punct}","");	        
+	        limpio = limpio.replaceAll("\\p{Punct}","");	   
+	        */     
 	    }
 	    return limpio;
 	}
