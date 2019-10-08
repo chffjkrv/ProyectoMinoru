@@ -31,7 +31,12 @@ public class Hashmap {
 	        listaPalabras.put(codigo, palabra);
 	    }
 	}
-   
+ /**
+  * Este metodo rellena un HashMap (lista) con las palabras del arrtxt2(String[] normalizado y sin repeticiones)
+  * creando para cada una, un id numerico.
+  * @param lista
+  * @param arrtxt2
+  */
    public void llenarHashMap(HashMap <Integer,String> lista, ArrayList<String> arrtxt2 ) {
 	 
 	   Hashmap Listpal = new Hashmap();
@@ -39,7 +44,11 @@ public class Hashmap {
 			Listpal.guardarPalabra(x, arrtxt2.get(x), lista);
 		}   
    }
-
+/**
+ * Sirve para modificar alguna palabra dado un Id.
+ * @param codigo
+ * @param listaPalabras
+ */
    public  void modificaPalabra(Integer codigo, HashMap<Integer,String> listaPalabras){
 	    Scanner sc = new Scanner(System.in);
 	    if (listaPalabras.containsKey(codigo)) {
@@ -49,7 +58,10 @@ public class Hashmap {
 	        System.out.println("No hay ninguna Palabra con ese codigo.");
 	    }
 	}
-
+/**
+ * Lista las palabras por pantalla.
+ * @param listaPalabras
+ */
    public  void mostrarPalabras(HashMap<Integer, String> listaPalabras) {
 	    Integer clave;
 	    Iterator<Integer> Palabras = listaPalabras.keySet().iterator();
@@ -59,7 +71,10 @@ public class Hashmap {
 	        System.out.println(clave + " - " + listaPalabras.get(clave));
 	    }
 	}
-
+/**
+ * Lista las palabras por pantalla creando un entrySet() y recogiendo las claves y los valores.
+ * @param listaPalabras
+ */
    public  void mostrarPalabras2(HashMap<Integer, String> listaPalabras) {
 	    Iterator iterador = listaPalabras.entrySet().iterator();
 
@@ -69,6 +84,12 @@ public class Hashmap {
 	        System.out.println(Palabra.getKey() + " - " + Palabra.getValue());
 	    }
 	}
+/**
+ * Aqui dada una palabra, se crea un entrySet() y se itera sobre el HashMap buscando esta palabra para recoger su id.
+ * @param listaPalabras
+ * @param pal
+ * @return Id de la palabra introducida.
+ */
    public Integer damelId(HashMap<Integer, String> listaPalabras, String pal) {
 	    
 	   Iterator iterador = listaPalabras.entrySet().iterator();
@@ -83,7 +104,11 @@ public class Hashmap {
 	    }
 	    return id;
 	}
-
+/**
+ * Con este metodo
+ * @param codigo
+ * @param listaPalabras
+ */
    public  void eliminaPalabra(Integer codigo, HashMap<Integer,String> listaPalabras) {
 	    if (listaPalabras.containsKey(codigo)) {
 	        listaPalabras.remove(codigo);
