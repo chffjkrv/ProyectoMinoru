@@ -49,6 +49,9 @@ public class Matrix {
 				num1 = arrTxtInteger[x];
 				num2 = arrTxtInteger[x+1];
 				numCell=MtrxInt[num1][num2];
+				if(numCell == null) {
+					numCell=0;
+				}
 				numCell += 1;
 				MtrxInt[num1][num2] = numCell;
 			
@@ -67,17 +70,19 @@ public class Matrix {
 		ArrayList<Integer> sumacolumna = new ArrayList<Integer>();
 
 		
-		for(int col = 0; col <MtrxInt[0].length ; col++) {
+		for(int fil = 0; fil <MtrxInt[0].length ; fil++) {
 			
 			int cell = 0;			
 			
-			for(int fil = 0; fil<MtrxInt[0].length ; fil++) {
+			for(int col = 0; col<MtrxInt[0].length ; col++) {
 				
-				 cell +=  MtrxInt[col][fil];
-				 
+				if(MtrxInt[fil][col] != null) {
+					 cell +=  MtrxInt[fil][col];		
+				}
+							 
 			}
 			
-			sumacolumna.add(col, cell);
+			sumacolumna.add(fil, cell);
 		}		
 		
 		return sumacolumna;

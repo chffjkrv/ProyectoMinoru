@@ -24,7 +24,7 @@ public class Mainclaina {
 		
 
 	
-		String texto = "quijoteCorto";
+		String texto = "ElQvixote";
 		
 		ArrayList<String> arrTxt;
 		ArrayList<String> arrTxt2;
@@ -53,7 +53,7 @@ public class Mainclaina {
  		//Generacion de Matix.
  		MatrizDoble = Matrix.creaMatrix(arrTxt2);
  		System.out.println(MatrizDoble.length);
- 		Matrix.inicializarMatrix(MatrizDoble);
+ 	//	Matrix.inicializarMatrix(MatrizDoble);
  		Matrix.rellenaMatrix(MatrizDoble, arrTxtInteger);
  		ArrayList<Integer> arrNorm = new ArrayList<Integer>();
  		arrNorm = Matrix.normalizacionPorColumna(MatrizDoble);
@@ -65,8 +65,9 @@ public class Mainclaina {
  		EscribeTXT.escribeArrIntEnTXT(MatrizDoble, texto+"Matrix");
  		EscribeTXT.escribeNormalizacionIntEnTXT(arrNorm,texto+"normalizaciones");
 
- 		System.out.println("El texto tiene : "+arrTxt.size()+" palabras\n");
- 		System.out.println("Sin repeticiones son: "+arrTxt2.size()+" palabra");
+ 		System.out.println("El texto tiene : "+arrTxt.size()+" palabras");
+ 		System.out.println("Sin repeticiones son: "+arrTxt2.size()+" palabras");
+ 		System.out.println("En la normalización se han sumado "+arrNorm.size()+" registros");
  		System.out.println("YA TA PREMOH");
  		
  		//listaConfluencias=Matrix.confluencia(MatrizDoble, arrTxtInteger);
