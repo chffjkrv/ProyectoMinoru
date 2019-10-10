@@ -22,13 +22,11 @@ public class Mainclaina {
 
 	public static void main(String[] args) throws IOException {
 		
-
 	
 		String texto = "ElQvixote";
 		
 		ArrayList<String> arrTxt;
 		ArrayList<String> arrTxt2;
-	//	ArrayList<Integer> listaConfluencias;
 		HashMap<Integer,String> listaPalabras;
 		Hashmap Listpal;
 		
@@ -53,13 +51,11 @@ public class Mainclaina {
  		//Generacion de Matix.
  		MatrizDoble = Matrix.creaMatrix(arrTxt2);
  		System.out.println(MatrizDoble.length);
- 	//	Matrix.inicializarMatrix(MatrizDoble);
  		Matrix.rellenaMatrix(MatrizDoble, arrTxtInteger);
  		ArrayList<Integer> arrNorm = new ArrayList<Integer>();
  		arrNorm = Matrix.normalizacionPorColumna(MatrizDoble);
 		
  		//Generamos los documentos .txt
-
  		EscribeTXT.escribeArrIntEnTXT(arrTxtInteger,texto+"TextoEnNumeros");
  		EscribeTXT.escribeHashMapEnTXT(listaPalabras, texto+"ListaPalabrasID");  
  		EscribeTXT.escribeArrIntEnTXT(MatrizDoble, texto+"Matrix");
@@ -68,20 +64,7 @@ public class Mainclaina {
  		System.out.println("El texto tiene : "+arrTxt.size()+" palabras");
  		System.out.println("Sin repeticiones son: "+arrTxt2.size()+" palabras");
  		System.out.println("En la normalización se han sumado "+arrNorm.size()+" registros");
- 		System.out.println("YA TA PREMOH");
+ 		System.out.println("Ya esta listo");
  		
- 		//listaConfluencias=Matrix.confluencia(MatrizDoble, arrTxtInteger);
- 	//	EscribeTXT.escribeArrListIntEnTXT(listaConfluencias, texto+"ArrayTuplasTotal");
- 		
- 		
- 	/**	Integer[] listaConfluenciasBIS = new Integer[listaConfluencias.size()];
- 		listaConfluenciasBIS=listaConfluencias.toArray(listaConfluenciasBIS);
- 		if(listaConfluenciasBIS.equals(arrTxtInteger)==true) {
- 			System.out.println("IDEM");
- 		} else {
- 			System.out.println("NIET");
- 		}
- 		*/
-	}
-	
+	}	
 } 
