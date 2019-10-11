@@ -95,7 +95,7 @@ public class Matrix {
 		ArrayList<Integer> sumacolumna = new ArrayList<Integer>();
 
 		
-		for(int fil = 0; fil <MtrxInt[0].length ; fil++) {
+		for(int fil = 0; fil <MtrxInt[0].length; fil++) {
 			
 			int cell = 0;			
 			

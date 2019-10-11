@@ -22,7 +22,7 @@ public class EscribeTXT{
 	 * @param nombreArchivo Es el nombre (String) que queremos poner al fichero.
 	 */
     public static void escribeArrIntEnTXT(Integer[] arrInt, String nombreArchivo) {
-    	
+   
         FileWriter fichero = null;
         PrintWriter pw = null;
         try
