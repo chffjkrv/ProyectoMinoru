@@ -4,14 +4,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
-
+/**
+ * Esta clase es la encargada de proveer los métodos con los cuales crearemos y escribiremos los resultados de obtenidos.
+ * @author Daniel Arroyave
+ * @version 08/10/2019
+ */
 public class EscribeTXT{
 
-	public EscribeTXT(){
 	
-}
+	public EscribeTXT() {
+		
+	}
+	
+	/**
+	 * Método para crear y escribir un fichero que contienga un array.
+	 * @param arrInt Es el array que queremos escribir en el fichero.
+	 * @param nombreArchivo Es el nombre (String) que queremos poner al fichero.
+	 */
     public static void escribeArrIntEnTXT(Integer[] arrInt, String nombreArchivo) {
-
+    	
         FileWriter fichero = null;
         PrintWriter pw = null;
         try
@@ -35,8 +46,14 @@ public class EscribeTXT{
         }
     }
 
+    
+    /**
+	 * Método para crear y escribir un fichero que contienga un ArrayList.
+	 * @param listaConfluencias Es el ArrayList que queremos escribir en el fichero.
+	 * @param nombreArchivo Es el nombre (String) que queremos poner al fichero.
+	 */
     public static void escribeArrListIntEnTXT(ArrayList<Integer> listaConfluencias, String nombreArchivo) {
-
+    	
         FileWriter fichero = null;
         PrintWriter pw = null;
         try
@@ -59,8 +76,14 @@ public class EscribeTXT{
            }
         }
     }
+    
+    /**
+	 * Método para crear y escribir un fichero que contienga el ArrayList con las normalizaciones de las columnas.
+	 * @param normalizaciones Es el ArrayList que queremos escribir en el fichero.
+	 * @param nombreArchivo Es el nombre (String) que queremos poner al fichero.
+	 */   
     public static void escribeNormalizacionIntEnTXT(ArrayList<Integer> normalizaciones, String nombreArchivo) {
-
+		
         FileWriter fichero = null;
         PrintWriter pw = null;
         try
@@ -83,13 +106,20 @@ public class EscribeTXT{
         }
     }
     
+    
     @Override
 	public String toString() {
 		return "EscribeTXT []";
 	}
+    
+    /**
+	 * Método para crear y escribir un fichero que contienga por ejemplo un texto.
+	 * @param arrString Es el array de String que queremos escribir en el fichero.
+	 * @param nombreArchivo Es el nombre (String) que queremos poner al fichero.
+	 */
 	public static void escribeArrStringEnTXT(String[] arrString, String nombreArchivo) {
-
-        FileWriter fichero = null;
+		
+		FileWriter fichero = null;
         PrintWriter pw = null;
         try
         {
@@ -112,8 +142,13 @@ public class EscribeTXT{
         }
     }
     
+	/**
+	 * Método para crear y escribir un fichero que contienga el id de las palabras y las palabras en si, con un hashmap (clave, valor)
+	 * @param listaPalabras Es el hasmap que queremos escribir en el fichero.
+	 * @param nombreArchivo Es el nombre (String) que queremos poner al fichero.
+	 */
     public static void escribeHashMapEnTXT(HashMap<Integer, String> listaPalabras, String nombreArchivo) {
-
+    	    	
         FileWriter fichero = null;
         PrintWriter pw = null;
 	    Integer clave;
@@ -139,8 +174,14 @@ public class EscribeTXT{
            }
         }
     }
+    
+    /**
+	 * Método para crear y escribir un fichero que contienga la matriz con la que trabajaremos.
+	 * @param MatrizDoble Es la matriz que queremos escribir en el fichero.
+	 * @param nombreArchivo Es el nombre (String) que queremos poner al fichero.
+	 */
     public static void escribeArrIntEnTXT(Integer[][] MatrizDoble, String nombreArchivo) {
-
+       	
         FileWriter fichero = null;
         PrintWriter pw = null;
         try

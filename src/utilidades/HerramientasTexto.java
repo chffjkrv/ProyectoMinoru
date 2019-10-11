@@ -4,17 +4,23 @@ import java.io.*;
 import java.text.Normalizer;
 import java.util.*;
 import java.lang.String;
-
+/**
+ * Esta clase es la encargada de proporcionarlos las herramientas para poder manipular correctamente el texto.
+ * @author Daniel Arroyave
+ * @version 08/10/2019 
+ */
 public class HerramientasTexto {
 	
 	private static BufferedReader br;
 	public HerramientasTexto() {
 		
 	}
+	
+	
 /**
- * 
- * @param plbr
- * @return Devuelve la palabra noromalizada en ASCII.
+ * Con este metodo normalizamos el texto a ASCII, retiramos puntuación y ponemos todo en minúsculas.
+ * @param plbr Esta es la palabra que deseamos normalizar gramaticalmente.
+ * @return Devuelve la palabra noromalizada.
  */
 	public static String normalizaString(String plbr) {
 		
@@ -26,25 +32,16 @@ public class HerramientasTexto {
 	        limpio = Normalizer.normalize(limpio, Normalizer.Form.NFD).toLowerCase().replaceAll("[^\\p{ASCII}]", "").replaceAll("\\p{Punct}","");
 	        // Quitar caracteres no ASCII.
 	        // Poner en minusculas.
-	      /**  limpio = limpio.toLowerCase();
-=======
-	        limpio = Normalizer.normalize(limpio, Normalizer.Form.NFD);
-	        // Poner en minusculas.
-	        limpio = limpio.toLowerCase();
-	        // Quitar caracteres no ASCII.
->>>>>>> 5940ddda10f3e3dafa5fa9b632f1a46d03eadb5b
-	        limpio = limpio.replaceAll("[^\\p{ASCII}]", "");
-	        // Quitar cualquier tipo de puntuación aderida a la palabra
-	        limpio = limpio.replaceAll("\\p{Punct}","");	   
-	        */     
 	    }
 	    return limpio;
 	}
+	
+	
 	/**
-	 * 
-	 * @param pathText
-	 * @return Devuelve un ArrayList con el texto del fichero del path quie pasamos como parametro.
-	 * @throws IOException
+	 * Este método pasa a un array de String todo el texto
+	 * @param pathText Esta es la ruta de la ubiación del archivo .txt
+	 * @return Devuelve un ArrayList con el texto.
+	 * @throws IOException Capturamos el mensaje de error al abrir el fichero, si lo hubiese.
 	 */
 	public static ArrayList<String> fileToArray(String pathText) throws IOException  {
 
@@ -70,11 +67,13 @@ public class HerramientasTexto {
         }
         
 		return arrayText;	
+		
+		
 	}
 	/**
-	 * 
-	 * @param arrText
-	 * @return Devuelve un String[] del texto ordenado alfanumericamente y sin repeticiones en las palabras y numeros.
+	 * Este método crea un ArrayList que contiene el texto sin palabras repetidas,
+	 * @param arrText Este es el ArrayList que contiene el texto.
+	 * @return Devuelve un Arraylist con el texto ordenado alfanumericamente y sin repeticiones en las palabras y numeros.
 	 */
 	public static ArrayList<String> quitarRepeticiones(ArrayList<String> arrText){
 		
@@ -91,25 +90,3 @@ public class HerramientasTexto {
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,41 +1,22 @@
 PARTE DE APRENDIZAJE:
 -------------------------------------------\
 
--La idea principal consiste en volcar en tablas los textos, ya sea por capitulos o libros enteros.
-
--Hay que crear una tabla de referencias de id de las palabras, cada palabra que aparezca en el texto tendrá un id numerico.
-
--Se creara un array el cual en lugar de las palabras del texto tenga los id en las mismas posiciones de las palabras.
-
-	ej: El perro muerde al perro = [(el,id.1)(perro,id.2)(muerde,id.3)(al,id.4)(perro,id.2)]
-		
-		[(El,1)(perro,2)(muerde,3)(al,4)(perro,5)] = [(1,2,3,4,2)]
-		
-		
--Lo que se introduzca en las tete (tablas de texto) serán los id y en los campos se reforzaran las concurrencias de estos en el texto.
-
--Cada tete tendrá su correspondiente tabla de palabras-id, la cual se utilizará para posteriormente extraer los resultados concurrencia de las 2tupla. Estas tablas-id tendrán una estructura de hashmap.
-
-
-
-EXTRACCION Y ANALISIS DE DATOS DE LA BBDDD:
--------------------------------------------\
-
--Han de compararse los resultados obtenidos de las tablas.	
-
-
-
-
+-El texto a analizar se pasa a un ArrayList
+-Este ArrayList se pasa a un SetList para eliminar palabras repetidas y luego se vuelve a pasar a un ArrayList2.
+-A partir de este segundo ArrayList2 se genera un HashMap con clave-valor id(autonumérico)-palabra del ArrayList2.
+-Generamos un array de Integers que será el texto, pero en el que sustuiremos las palabras del mismo por sus id correspondientes.
+-Generamos una matriz vacía del tamaño del ArrayList2.
+-Volcamos en las cabeceras de los ejes x-y todas las palabras del ArrayList2.
+-Recorremos por tuplas el ArrayList2, reforzando en la matriz todos los casos que se dan en las tuplas.
+-Normalizamos las columnas, para posteriormente calcular la frecuencia relativa de cada tupla en la tabla.
 
 POSIBLES FUNCIONALIDADES DEL PROGRAMA:
 -------------------------------------------\
-
-
-
-
-
+-Generar textos según el set de aprendizaje.
+-Implementarlo como un bot para jugar a las palabras encadenadas.
 
 
 DATOS:
 -------------\
-La cantidad máxima de elementos de una array es (2^31)−1 o 2 147 483 647
+*La cantidad máxima de elementos de una array es (2^31)−1 o 2 147 483 647
+*Si se amplia la memoria RAM asiganada a Java en el control system, puede procesar el Quijote entero a partir de texto plano.
