@@ -1,0 +1,22 @@
+PARTE DE APRENDIZAJE:
+-------------------------------------------\
+
+-El texto a analizar se pasa a un ArrayList
+-Este ArrayList se pasa a un SetList para eliminar palabras repetidas y luego se vuelve a pasar a un ArrayList2.
+-A partir de este segundo ArrayList2 se genera un HashMap con clave-valor id(autonumérico)-palabra del ArrayList2.
+-Generamos un array de Integers que será el texto, pero en el que sustuiremos las palabras del mismo por sus id correspondientes.
+-Generamos una matriz vacía del tamaño del ArrayList2.
+-Volcamos en las cabeceras de los ejes x-y todas las palabras del ArrayList2.
+-Recorremos por tuplas el ArrayList2, reforzando en la matriz todos los casos que se dan en las tuplas.
+-Normalizamos las columnas, para posteriormente calcular la frecuencia relativa de cada tupla en la tabla.
+
+POSIBLES FUNCIONALIDADES DEL PROGRAMA:
+-------------------------------------------\
+-Generar textos según el set de aprendizaje.
+-Implementarlo como un bot para jugar a las palabras encadenadas.
+
+
+DATOS:
+-------------\
+*La cantidad máxima de elementos de una array es (2^31)−1 o 2 147 483 647
+*Si se amplia la memoria RAM asiganada a Java en el control system, puede procesar el Quijote entero a partir de texto plano.

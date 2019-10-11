@@ -1,0 +1,16 @@
+PARTE DE APRENDIZAJE:
+---------------------------------------------\
+
+-Volcar los textos a analizar en tablas, la longitud en la que se 
+ dividan depende de la estructura de las matrices que se elija.
+
+-Hay que crear una tabla de referencias de id de las palabras, tomando
+ un solo id por palabra, siendo el mismo para palabras repetidas. (para
+ esto habrá que normalizar el texo de mayusculas y acentos).
+ 
+-Se creará un array el cual será igual que el array que incluya al texto,
+ pero en lugar de palabras tendrá los id de las mismas. De esta manera
+ agilizamos el analisis.
+ 
+--Usar corpus del castellano con frecuencias (CREA_total.TXT).
+
