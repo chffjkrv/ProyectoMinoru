@@ -1,6 +1,0 @@
-Package UTILIDADES:
-	
-	EscribeTXT:
-		
-		-escribeArrIntEnTXT(Integer[] arrInt, String nombreArchivo).
-		-
